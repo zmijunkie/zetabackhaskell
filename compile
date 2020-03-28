@@ -1,0 +1,2 @@
+#!/bin/sh -x
+stack  --resolver=lts-8.0 ghc -- zetabackhaskell.hs
