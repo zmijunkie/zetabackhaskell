@@ -21,7 +21,7 @@ data Command =
   deriving (Show)   
 
 parserInfo' :: O.ParserInfo Command  
-parserInfo' = info' parser' "zetaback.hs - your friendy zetaback clone written in Haskell"
+parserInfo' = info' parser' "zetabackhaskell - your friendy zetaback clone written in Haskell"
   where
     parser' :: O.Parser Command 
     parser' = (O.subparser . F.foldMap command') 
@@ -70,7 +70,7 @@ main :: IO ()
 main = do
     cmd <- showHelpOnErrorExecParser parserInfo'
     case cmd of
-        Version -> putStrLn "zetaback.hs: 1.0.6"
+        Version -> putStrLn "zetabackhaskell 0.01 - inspired by zetaback.hs: 1.0.6"
         Backup conffile (Just zfs) -> putStrLn ("backup up pool " ++ zfs ++ " using config " ++ conffile)
         Backup conffile _ -> putStrLn ("backup up all pools using config " ++ conffile  )
         Recover conffile (Just zfs) -> putStrLn ("recovering pool " ++ zfs ++ " using config " ++ conffile)
